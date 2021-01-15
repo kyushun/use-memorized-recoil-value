@@ -8,12 +8,7 @@ on:
 
 jobs:
   Build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [14]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
