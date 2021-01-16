@@ -1,15 +1,15 @@
 # `useMemorizedRecoilValue`
-A react hook for subscribing to the previous value of the asynchronous selector in Recoil while loading. 
+Recoil で非同期 selector のデータ取得中に直前の値を参照できるようにする React hooks
 
 [![npm version](https://badge.fury.io/js/use-memorized-recoil-value.svg)](https://badge.fury.io/js/use-memorized-recoil-value)
 ![CI](https://github.com/kyushun/use-memorized-recoil-value/workflows/CI/badge.svg)
 
-[🇯🇵 日本語](https://github.com/kyushun/use-memorized-recoil-value/blob/master/README.ja.md)
+[English](https://github.com/kyushun/use-memorized-recoil-value/blob/master/README.md)
 
 ## About
-Recoil allows you to return a Promise from a selector `get` callback.
-However, we need to wrap components with `<React.Suspense />` to take care of pending data, also it's impossible to read the previous value while waiting for the promise to resolve.
-`useMemorizedRecoilValue` returns the previous value while loading data and it's not necessary to wrap with `<React.Suspense>`.
+Recoil では selector の get コールバック関数に Promise を返すことができます。
+しかし、取得中のデータデータを扱うためにコンポーネントを `<React.Suspense />` でラップする必要があり、また Promise が解決するまでの間は直前の値を参照することもできません。
+`useMemorizedRecoilValue` はロード中に直前の値を返し、`<React.Suspense />` でラップする必要がなくなります。
 
 ## Installation
 ```sh
@@ -42,6 +42,6 @@ const Sample = () => {
 ## Reference
 ```ts
 type useMemorizedRecoilValue = (
-  recoilValue: RecoilValue<T>, defaultValue?: T
+  recoilValue: RecoilValue<T>
 ) => { value: T | undefined; loadable: Loadable<T> }
 ```
