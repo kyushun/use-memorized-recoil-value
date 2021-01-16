@@ -1,6 +1,6 @@
 {
   "name": "use-memorized-recoil-value",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A react hook for subscribing to the memorized value of asynchronous recoil selectors",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
