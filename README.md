@@ -30,6 +30,6 @@ const Sample = () => {
 ## Reference
 ```ts
 type useMemorizedRecoilValue = (
-  recoilValue: RecoilValue<T>
+  recoilValue: RecoilValue<T>, defaultValue?: T
 ) => { value: T | undefined; loadable: Loadable<T> }
 ```
