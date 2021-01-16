@@ -6,10 +6,11 @@ type MemorizedLoadable<T> = Loadable<T> & {
 };
 
 const useMemorizedRecoilValue = <T>(
-  recoilValue: RecoilValue<T>
+  recoilValue: RecoilValue<T>,
+  defaultValue?: T
 ): MemorizedLoadable<T> => {
   const loadable = useRecoilValueLoadable(recoilValue);
-  const [value, setValue] = useState<T>();
+  const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {
     if (loadable.state === 'hasValue') {
